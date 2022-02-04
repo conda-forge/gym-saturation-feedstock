@@ -1,5 +1,5 @@
 {% set name = "gym-saturation" %}
-{% set version = "0.2.3" %}
+{% set version = "0.2.5" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 72858ae490aea02515ba040760a80b6a1722bd353efb13daf6cf0c7660674b9a
+  sha256: bef1fefcbdfeb324a5064400aadfdc3e1a1a95985e52352f30dd2db94f986f15
 
 build:
   noarch: python
   number: 0
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
@@ -42,7 +42,7 @@ about:
   license: Apache-2.0
   license_family: Apache
   license_file: LICENSE
-  summary: 'an OpenAI Gym environment for saturation provers'
+  summary: an OpenAI Gym environment for saturation provers
   description: |
     gym-saturation is an OpenAI Gym environment for reinforcement learning
     agents striving to prove theorems.
