@@ -24,6 +24,7 @@ requirements:
     - gym
     - lark-parser
     - importlib_resources
+    - orjson
 
 test:
   imports:
