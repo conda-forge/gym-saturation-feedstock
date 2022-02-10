@@ -1,5 +1,5 @@
 {% set name = "gym-saturation" %}
-{% set version = "0.2.6" %}
+{% set version = "0.2.7" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: d3fcada5c532219297a2fae9e475eb100bfe0d1aeb220b01230aee08e340e8e0
+  sha256: 0f2509c40355fde9c59f7f304e1d05550781f6b43cf4de407efb884fd6f92264
 
 build:
   noarch: python
@@ -24,6 +24,7 @@ requirements:
     - gym
     - lark-parser
     - importlib_resources
+    - orjson
 
 test:
   imports:
