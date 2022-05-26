@@ -1,5 +1,5 @@
 {% set name = "gym-saturation" %}
-{% set version = "0.3.8" %}
+{% set version = "0.3.10" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: ae29a1b210c027d94a0d91e5282ad898c219997b42fd1173a09478c8785d4098
+  sha256: 5a27ada0991d7ab4a81dd654fae5636069d7fcaaf3105b6e39245a44bdcc90ef
 
 build:
   noarch: python
@@ -22,7 +22,7 @@ requirements:
   run:
     - python >=3.7
     - gym
-    - lark-parser
+    - tptp-lark-parser
     - importlib_resources
     - orjson
     - pexpect
