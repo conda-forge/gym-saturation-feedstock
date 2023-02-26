@@ -35,7 +35,10 @@ test:
     - gym_saturation
   commands:
     - pip check
-    - pytest --doctest-modules --ignore=gym_saturation/vampire_wrapper.py --ignore=gym_saturation/agent_testing.py gym_saturation
+    - >
+      pytest --doctest-modules --ignore=gym_saturation/vampire_wrapper.py
+      --ignore=gym_saturation/agent_testing.py --ignore=gym_saturation/envs/vampire_env.py
+      --ignore=gym_saturation/envs/iprover_env.py gym_saturation
 
 about:
   home: https://github.com/inpefess/gym-saturation
