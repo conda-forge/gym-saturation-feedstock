@@ -1,13 +1,13 @@
 {% set name = "gym-saturation" %}
-{% set version = "0.4.3" %}
+{% set version = "0.7.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: fb37ee61f750c1828f332da3cf7f872e074cedf717c39ae8c75985116c1a19ef
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
+  sha256: 34ee2d1ab72adadd4c5b43afeec1c4810aa57577c00d4827d1c3edc98f0b4d7b
 
 build:
   noarch: python
@@ -21,10 +21,8 @@ requirements:
     - poetry-core >=1.0.0
   run:
     - python >=3.7
-    - gym
-    - tptp-lark-parser
+    - gymnasium
     - importlib_resources
-    - orjson
     - pexpect
 
 test:
@@ -37,17 +35,20 @@ test:
     - gym_saturation
   commands:
     - pip check
-    - pytest --doctest-modules --ignore=gym_saturation/vampire_wrapper.py --ignore=gym_saturation/agent_testing.py gym_saturation
+    - >
+      pytest --doctest-modules --ignore=gym_saturation/vampire_wrapper.py
+      --ignore=gym_saturation/agent_testing.py --ignore=gym_saturation/envs/vampire_env.py
+      --ignore=gym_saturation/envs/iprover_env.py gym_saturation
 
 about:
   home: https://github.com/inpefess/gym-saturation
   license: Apache-2.0
   license_family: Apache
   license_file: LICENSE
-  summary: an OpenAI Gym environment for saturation provers
+  summary: a collection of Gymnasium environments for saturation provers
   description: |
-    gym-saturation is an OpenAI Gym environment for reinforcement learning
-    agents striving to prove theorems.
+    gym-saturation is collection of Gymnasium environments for guiding
+    automated theorem provers by reinforcement learning agents.
   doc_url: https://gym-saturation.readthedocs.io/
   dev_url: https://github.com/inpefess/gym-saturation
 
