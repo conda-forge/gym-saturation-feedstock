@@ -1,5 +1,5 @@
 {% set name = "gym-saturation" %}
-{% set version = "0.8.0" %}
+{% set version = "0.8.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
-  sha256: 53a60a0f866c690a8318fa0a2c28a3bfdb9e4e19c648a759549071a0fd5f7c4c
+  sha256: d3ebf569612136f268c59d1d56d2abc61f58fcbbb1317dbea577694b4b5183b4
 
 build:
   noarch: python
@@ -36,11 +36,8 @@ test:
   commands:
     - pip check
     - >
-      pytest --doctest-modules --ignore=gym_saturation/vampire_wrapper.py
-      --ignore=gym_saturation/agent_testing.py --ignore=gym_saturation/envs/vampire_env.py
-      --ignore=gym_saturation/envs/iprover_env.py --ignore=gym_saturation/wrappers/age_weight_bandit.py
-      --ignore=gym_saturation/wrappers/ast2vec_wrapper.py
-      --ignore=gym_saturation/wrappers/parametric_actions_wrapper.py gym_saturation
+      pytest --doctest-modules --ignore=gym_saturation/vampire_wrapper.py --ignore=gym_saturation/agent_testing.py --ignore=gym_saturation/envs/vampire_env.py --ignore=gym_saturation/envs/iprover_env.py --ignore=gym_saturation/wrappers/age_weight_bandit.py --ignore=gym_saturation/wrappers/ast2vec_wrapper.py --ignore=gym_saturation/wrappers/parametric_actions_wrapper.py
+      gym_saturation
 
 about:
   home: https://github.com/inpefess/gym-saturation
