@@ -1,5 +1,5 @@
 {% set name = "gym-saturation" %}
-{% set version = "0.9.3" %}
+{% set version = "0.10.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
-  sha256: 06cee4cb049165a883524d3b35d955e825d7afddb0d873e9c86e8a3f5687ab5a
+  sha256: 725314bdfb0792cae7726900ce2ac68a199a99f2f1cc397a6dba1b35bab3975d
 
 build:
   noarch: python
