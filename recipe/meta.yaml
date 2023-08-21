@@ -1,5 +1,5 @@
 {% set name = "gym-saturation" %}
-{% set version = "0.10.3" %}
+{% set version = "0.10.4" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
-  sha256: 8de993a304db786657046194a4cda1d62bdea5f2b15c33be1375e1ccd1acfd6c
+  sha256: 5f4d831e9c059b140c312f13b46c13444e562166827640ae24b8ae675b6d5dc3
 
 build:
   noarch: python
@@ -37,7 +37,7 @@ test:
     - pip check
     - >
       pytest --doctest-modules --ignore=gym_saturation/vampire_wrapper.py --ignore=gym_saturation/agent_testing.py --ignore=gym_saturation/envs/vampire_env.py --ignore=gym_saturation/envs/iprover_env.py --ignore=gym_saturation/wrappers/age_weight_bandit.py --ignore=gym_saturation/wrappers/ast2vec_wrapper.py --ignore=gym_saturation/wrappers/parametric_actions_wrapper.py
-      --ignore=gym_saturation/wrappers/duplicate_key_obs.py gym_saturation
+      --ignore=gym_saturation/wrappers/duplicate_key_obs.py --ignore=gym_saturation/wrappers/llmwrapper.py gym_saturation
 
 about:
   home: https://github.com/inpefess/gym-saturation
