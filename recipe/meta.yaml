@@ -36,8 +36,7 @@ test:
   commands:
     - pip check
     - >
-      pytest --doctest-modules --ignore=gym_saturation/vampire_wrapper.py --ignore=gym_saturation/agent_testing.py --ignore=gym_saturation/envs/vampire_env.py --ignore=gym_saturation/envs/iprover_env.py --ignore=gym_saturation/wrappers/age_weight_bandit.py --ignore=gym_saturation/wrappers/ast2vec_wrapper.py --ignore=gym_saturation/wrappers/parametric_actions_wrapper.py
-      --ignore=gym_saturation/wrappers/duplicate_key_obs.py --ignore=gym_saturation/wrappers/llmwrapper.py gym_saturation
+      pytest --doctest-modules --ignore=gym_saturation/vampire_wrapper.py --ignore=gym_saturation/envs --ignore=gym_saturation/wrappers gym_saturation
 
 about:
   home: https://github.com/inpefess/gym-saturation
