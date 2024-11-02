@@ -1,13 +1,13 @@
 {% set name = "gym-saturation" %}
-{% set version = "0.11.6" %}
+{% set version = "0.11.9" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
-  sha256: 307bfbb960cc24411895a1ae76b0a4457b45262768aa1d9779252f100a32332d
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
+  sha256: b693d27a168793b693fcd35d921257030dc22bec8fe273f876e5bad52f334017
 
 build:
   noarch: python
@@ -16,12 +16,12 @@ build:
 
 requirements:
   host:
-    - python >=3.8
+    - python >=3.8, <3.13
     - pip
     - poetry-core >=1.0.0
   run:
-    - python >=3.8
-    - gymnasium
+    - python >=3.8, <3.13
+    - gymnasium <1.0.0
     - importlib_resources
     - pexpect
 
