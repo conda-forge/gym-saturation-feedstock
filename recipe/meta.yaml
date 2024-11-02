@@ -21,7 +21,7 @@ requirements:
     - poetry-core >=1.0.0
   run:
     - python >=3.8, <3.13
-    - gymnasium
+    - gymnasium <1.0.0
     - importlib_resources
     - pexpect
 
