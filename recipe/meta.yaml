@@ -22,7 +22,6 @@ requirements:
   run:
     - python >={{ python_min }}
     - gymnasium <1.0.0
-    - importlib_resources
     - pexpect
 
 test:
